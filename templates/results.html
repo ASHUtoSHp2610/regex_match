@@ -7,57 +7,86 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 20px;
         }
 
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
             background-color: #fff;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
+            border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        li:nth-child(even) {
-            background-color: #f9f9f9;
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .heading {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .item {
+            padding: 10px 20px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            text-align: left;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
         }
 
         .matched {
-            background-color: #c3e6cb;
+            background-color: #d4edda;
+            border-left: 5px solid #28a745;
         }
 
         .unmatched {
-            background-color: #f5c6cb;
+            background-color: #f8d7da;
+            border-left: 5px solid #dc3545;
         }
     </style>
 </head>
 <body>
-    <h1>Matches Found</h1>
-    <h2>Matched Items</h2>
-    <ul>
-        {% for match in matched %}
-            <li class="matched">{{ matches }}</li>
-        {% endfor %}
-    </ul>
-    <h1>Unmatches Found</h1>
-    <h2>Unmatches Items</h2>
-    <ul>
-        {% for match in matched %}
-            <li class="matched">{{ mismatches }}</li>
-        {% endfor %}
-    </ul>
-
+    <div class="container">
+        <h1>Regex Results</h1>
+        <div class="section">
+            <div class="heading">Matched Items</div>
+            <ul class="list">
+                {% for match in matches %}
+                    <li class="item matched">{{ match }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="section">
+            <div class="heading">Unmatched Items</div>
+            <ul class="list">
+                {% for mismatch in mismatches %}
+                    <li class="item unmatched">{{ mismatch }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
