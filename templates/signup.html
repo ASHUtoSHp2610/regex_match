@@ -1,0 +1,111 @@
+<!-- signup.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Matcher - Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 20px auto; /* Center the container horizontally */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            border-bottom: 5px solid #333;
+            border-radius: 10px;
+            padding-bottom: 10px;
+            margin-top: 20px;
+        }
+        
+        h2 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"], input[type="password"], input[type="tel"], input[type="email"] {
+            width: calc(100% - 20px);
+            height: 40px;
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #57b300;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Regex Matcher - Sign Up</h1>
+        <form id="signup-form" action="/signup" method="post">
+            <h2>User Information</h2>
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="tel" name="phone_no" placeholder="Mobile Number" pattern="[0-9]{10}" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <h2>Account Details</h2>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit"><a href="/app" style="color: rgb(247, 245, 245);">Sign Up</a></button>
+        </form>
+        <p>Already have an account? <a href="/login">Sign In</a></p>
+    </div>
+
+    <script>
+        document.getElementById("signup-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Redirect to app.html after form submission
+            window.location.href = "app.html";
+        });
+    </script>
+</body>
+</html>

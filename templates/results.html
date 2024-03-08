@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        li:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .matched {
+            background-color: #c3e6cb;
+        }
+
+        .unmatched {
+            background-color: #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Matches Found</h1>
+    <h2>Matched Items</h2>
+    <ul>
+        {% for match in matched %}
+            <li class="matched">{{ matches }}</li>
+        {% endfor %}
+    </ul>
+    <h1>Unmatches Found</h1>
+    <h2>Unmatches Items</h2>
+    <ul>
+        {% for match in matched %}
+            <li class="matched">{{ mismatches }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
